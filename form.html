@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url('background.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        form {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input,
+        textarea,
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <form action="https://script.google.com/macros/s/AKfycbwTWb8g_TMk3UmRS4-WPFqrNYfSoMkakXp6JJnt_56gdHExL7QfPUpXJrKY-CeN8VaV/exec" method="post">
+    
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Eg:Ram Thakur" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="exp@gmail.com" required>
+
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="address" placeholder="Dharan-9" required>
+
+        <label for="contactNumber">Contact Number:</label>
+        <input type="tel" id="contactNumber" name="contactNumber" placeholder="98000000" required>
+
+        <label for="quantity">Quantity:</label>
+        <select id="quantity" name="quantity" required>
+            <option value="1" selected>1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+
+        <label for="bikeName">Bike Name:</label>
+        <input type="text" id="bikeName" name="bikeName" placeholder="Eg:R15" required>
+
+        <button type="submit">Submit</button>
+    </form>
+
+</body>
+</html>

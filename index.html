@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/x-icon" href="fevicon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bike Website</title>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header" id="header">
+        <nav>
+            <a href="index.html"> <!-- Add this line for the logo link -->
+                <img src="logo.png" class="logo">
+            </a> <!-- Add this line for the logo link -->
+            <ul>
+                <li> <a href="#" id="models">Classic Bullet</a></li>
+                <li> <a href="#" id="model3">MT 15</a></li>
+                <li> <a href="#" id="modelx">Harley Davidson</a></li>
+                <li> <a href="#" id="modely">Ninja H2R</a></li>
+                <li> <a href="#" id="modelz">KTM RC 390</a></li>
+            </ul>
+            <a href="#" class="btn">Book Now</a>
+            <a href="#" class="btn">About Me</a>
+            
+        </nav>
+        <div class="info">
+            <div>
+                <h2>13 L</h2>
+                <p>Fuel Capacity</p>
+            </div>
+            <div>
+                <h2>120 Km/h</h2>
+                <p>Top Speed</p>
+            </div>
+            <div>
+                <h2>35KM</h2>
+                <p>Mileage</p>
+            </div>
+            <div class="line"></div>
+            <div>
+                <h2 id="model">Classic Bullet</h2>
+            </div>
+        </div>
+        
+        <!-- Add a new div for the price -->
+        <div class="price-tag">
+            <p>Price: <span id="bike-price"> Rs. 4,99,000 – Rs. 5,30,000</span></p>
+        </div>
+    </div>
+  
+    </div>
+    <script>
+        // Set image-1 as the background image by default
+        document.getElementById("header").style.backgroundImage = "url(image-1.png)";
+        
+        var header = document.getElementById("header");
+        var ms = document.getElementById("models");
+        var m3 = document.getElementById("model3");
+        var mx = document.getElementById("modelx");
+        var my = document.getElementById("modely");
+        var mz = document.getElementById("modelz");
+        var model = document.getElementById("model");
+        var bookNowBtn = document.querySelector(".btn");
+        var bikePrice = document.getElementById("bike-price"); // Price element
+        var aboutUsBtn = document.querySelectorAll('.btn')[1]; // Select the second button with the "btn" class
+    
+        ms.onclick = function () {
+            header.style.backgroundImage = "url(image-1.png)";
+            model.innerHTML = "Classic Bullet";
+            updateModelInfo("13 L", "Fuel Capacity", "120 Km/h", "Top Speed", "35 Kmpl", "Mileage");
+            updatePrice(520000); // Update the price
+        };
+    
+        m3.onclick = function () {
+            header.style.backgroundImage = "url(image-2.png)";
+            model.innerHTML = "MT 15";
+            updateModelInfo("10 L", "Fuel Capacity", "130 km/h", "Top Speed", "56.87 Kmpl", "Mileage");
+            updatePrice(600000); // Update the price
+        };
+    
+        mx.onclick = function () {
+            header.style.backgroundImage = "url(image-3.jpg)";
+            model.innerHTML = "Harley Davidson";
+            updateModelInfo("22.7 L", "Fuel Capacity", "185 Km/h", "Top Speed", "18 Kmpl", "Mileage");
+            updatePrice(800000); // Update the price
+        };
+    
+        my.onclick = function () {
+            header.style.backgroundImage = "url(image-4.png)";
+            model.innerHTML = "Ninja H2R";
+            updateModelInfo("17 L", "Fuel Capacity", "249 Km/h", "Top Speed", "22 Kmpl", "Mileage");
+            updatePrice(1000000); // Update the price
+        };
+    
+        mz.onclick = function () {
+            header.style.backgroundImage = "url(image-5.png)";
+            model.innerHTML = "KTM RC 390";
+            updateModelInfo("9.5 L", "Fuel Capacity", "179 Km/h", "Top Speed", "30 Kmpl", "Mileage");
+            updatePrice(1400000); // Update the price
+        };
+    
+        bookNowBtn.onclick = function () {
+            window.open("form.html", "_blank");
+        };
+    
+        aboutUsBtn.addEventListener('mouseover', function () {
+            aboutUsBtn.innerHTML = 'Sudhamshu Bhattarai';
+        });
+    
+        aboutUsBtn.addEventListener('mouseout', function () {
+            aboutUsBtn.innerHTML = 'About Me';
+        });
+    
+        aboutUsBtn.addEventListener('click', function () {
+            window.open("https://www.facebook.com/sudhamshu00", "_blank");
+        });
+    
+        function updateModelInfo(speed, speedUnit, topSpeed, topSpeedUnit, maxRange, rangeUnit) {
+            document.querySelector(".info div:nth-child(1) h2").innerHTML = speed;
+            document.querySelector(".info div:nth-child(1) p").innerHTML = speedUnit;
+            document.querySelector(".info div:nth-child(2) h2").innerHTML = topSpeed;
+            document.querySelector(".info div:nth-child(2) p").innerHTML = topSpeedUnit;
+            document.querySelector(".info div:nth-child(3) h2").innerHTML = maxRange;
+            document.querySelector(".info div:nth-child(3) p").innerHTML = rangeUnit;
+        }
+    
+        function updatePrice(price) {
+            bikePrice.innerHTML = 'Rs. ' + price.toLocaleString(); // Formatting price
+        }
+    </script>
+</body>
+</html>
